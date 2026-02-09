@@ -36,6 +36,16 @@ value = 13
 if (remainder := value % 5):
     print(f"Not divisible, remainder is {remainder}")
 
+# 05_function 
+ *Scopes and Name Resolution 
+  - Local -> inside a function 
+  - Enclosing from outer function if nested 
+  - global - Top level script 
+  - Built in
+
+ ** 
+   - global chai_type - ye variable ko globally change kr dega
+   - nonlocal chai_type - ye sirf outer function wale variable ko update krega
 
 # git command 
 git status 
