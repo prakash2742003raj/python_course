@@ -46,6 +46,12 @@ if (remainder := value % 5):
  ** 
    - global chai_type - ye variable ko globally change kr dega
    - nonlocal chai_type - ye sirf outer function wale variable ko update krega
+  
+  * Function types 
+  - Pure and impure function
+  - Recursive function 
+  - lambda and Anonymous Function 
+  
 
 # git command 
 git status 
