@@ -52,7 +52,122 @@ if (remainder := value % 5):
   - Recursive function 
   - lambda and Anonymous Function 
   
+# 11_Exception handling 
+ - Handle the Excepton or error 
+        - IndexError -> Index out of range 
+        - KeyError -> Key is missing in Dict
+        - ZeroDivisionError -> divide by zero
+        - TypeError -> Incompitable types of variables
+        - NameError -> variable is not define and try to use
 
+  1️⃣ What is Exception?
+👉 Exception = Runtime error (program chalate waqt error)
+Example:
+print(10/0)
+Output:
+ZeroDivisionError
+
+🟢 2️⃣ Why Exception Handling?
+- Program crash hone se bachata hai
+- Error ko gracefully handle karta hai
+- User-friendly message deta hai
+
+🟢 3️⃣ try – except (Basic Syntax)
+try:
+    risky_code
+except ErrorType:
+    handling_code
+
+Example:
+try:
+    print(10/0)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+🟢 4️⃣ Multiple except
+try:
+    x = int("abc")
+    y = 10 / 0
+except ValueError:
+    print("Invalid conversion")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+🟢 5️⃣ Generic Exception
+try:
+    risky_code
+except Exception as e:
+    print("Error:", e)
+
+👉 Exception sab errors ko catch karega
+👉 e me error ka message milta hai
+
+🟢 6️⃣ else Block
+👉 Jab error nahi aata tab chalta hai
+
+try:
+    x = 10/2
+except ZeroDivisionError:
+    print("Error")
+else:
+    print("No error")
+
+🟢 7️⃣ finally Block
+
+👉 Hamesha chalega (error aaye ya na aaye)
+
+try:
+    x = 10/0
+except:
+    print("Error")
+finally:
+    print("Done")
+
+*Use case:
+-File close karna
+-Database connection close karna
+
+🟢 8️⃣ raise Keyword
+👉 Manually error generate karna
+age = -5
+if age < 0:
+    raise ValueError("Age cannot be negative")
+
+🟢 9️⃣ Custom Exception
+class MyError(Exception):
+    pass
+
+raise MyError("Something went wrong")
+
+🟢 🔟 Common Built-in Exceptions
+Exception	Meaning
+ZeroDivisionError	10/0
+ValueError	Wrong value type
+TypeError	Wrong data type
+KeyError	Dictionary key missing
+IndexError	List index out of range
+FileNotFoundError	File not found
+🟢 1️⃣1️⃣ Full Structure (Best Practice)
+try:
+    risky_code
+except SpecificError:
+    handle_specific
+except Exception as e:
+    handle_other
+else:
+    no_error_case
+finally:
+    always_execute
+
+🟢 Quick Revision Summary
+
+- try → risky code
+- except → error handle
+- else → no error case
+- finally → always run
+- raise → manually error
+
+Custom exception → apna error class
 # git command 
 git status 
 git add . 
